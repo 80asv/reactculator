@@ -1,9 +1,9 @@
 import React from 'react'
 import './SecondPanel.scss'
 
-const SecondPanel = () => {
+const SecondPanel = ({ result }) => {
   return (
-    <div className='second-panel'>Second Panel</div>
+    <div className='second-panel'>{result === "" ? "-" : result }</div>
   )
 }
 

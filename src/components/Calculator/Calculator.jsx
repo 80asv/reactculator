@@ -8,55 +8,54 @@ import './Calculator.scss'
 
 const btns_basics = [
     {id: 1, text: "0", name: "zero"},
-    {id: 1, text: "1", name: "one"},
-    {id: 1, text: "2", name: "two"},
-    {id: 1, text: "3", name: "three"},
-    {id: 1, text: "4", name: "four"},
-    {id: 1, text: "5", name: "five"},
-    {id: 1, text: "6", name: "six"},
-    {id: 1, text: "7", name: "seven"},
-    {id: 1, text: "8", name: "eight"},
-    {id: 1, text: "9", name: "nine"},
-    {id: 1, text: "=", name: "equals"},
-    {id: 1, text: "+", name: "add"},
-    {id: 1, text: "-", name: "subtract"},
-    {id: 1, text: "*", name: "multiply"},
-    {id: 1, text: "/", name: "split"},
-    {id: 1, text: "CE", name: "clear"},
-    {id: 1, text: "C", name: "clear-all"},
-    {id: 1, text: "DEL", name: "del"},
-    {id: 1, text: ".", name: "dot"},
+    {id: 2, text: "1", name: "one"},
+    {id: 3, text: "2", name: "two"},
+    {id: 4, text: "3", name: "three"},
+    {id: 5, text: "4", name: "four"},
+    {id: 6, text: "5", name: "five"},
+    {id: 7, text: "6", name: "six"},
+    {id: 8, text: "7", name: "seven"},
+    {id: 9, text: "8", name: "eight"},
+    {id: 10, text: "9", name: "nine"},
+    {id: 11, text: "=", name: "equals"},
+    {id: 12, text: "+", name: "add"},
+    {id: 13, text: "-", name: "subtract"},
+    {id: 14, text: "*", name: "multiply"},
+    {id: 15, text: "/", name: "split"},
+    {id: 16, text: ".", name: "dot"},
 ]
 
 const operations = [
-    {id: 1, text: "Inv", name: "inv"},
-    {id: 2, text: "Rad", name: "rad"},
-    {id: 3, text: "Sin", name: "sin"},
-    {id: 4, text: "Cos", name: "cos"},
-    {id: 5, text: "Tan", name: "tan"},
-    {id: 6, text: "%", name: "percentage"},
-    {id: 7, text: "In", name: "in"},
-    {id: 8, text: "Log", name: "log"},
+    {id: 1, text: "Inv", name: "inv", value: ""},
+    {id: 2, text: "rad", name: "rad", value: ""},
+    {id: 3, text: "sin", name: "sin", value: "sin("},
+    {id: 4, text: "cos", name: "cos", value: "cos("},
+    {id: 5, text: "Tan", name: "tan", value: "tg("},
+    {id: 6, text: "%", name: "percentage", value: "%"},
+    {id: 7, text: "In", name: "in", value: "log2("},
+    {id: 8, text: "Log", name: "log", value: "log("},
     {id: 9, text: "!", name: "factorial"},
-    {id: 10, text: "^", name: "exponential"},
-    {id: 11, text: "PI", name: "pi"},
-    {id: 12, text: "e", name: "euler"},
+    {id: 10, text: "^", name: "exponential", value: ""},
+    {id: 11, text: "PI", name: "pi", value: "3.1416"},
+    {id: 12, text: "e", name: "euler", value: "e("},
     {id: 13, text: "(", name: "bracket-left"},
     {id: 14, text: ")", name: "bracket-right"},
-    {id: 15, text: "sqrt()", name: "sqrt"},
+    {id: 15, text: "sqrt()", name: "sqrt", value: "sqrt("},
 ]
 
+const manejadorCambio = () => console.log("cambiaaaaa");
 
 const Calculator = () => {
 
-    const { input, handleClick, handleReset } = useContext(CalculatorContext)
+    const { input, handleClick, handleReset, handleDel, handleResult, result } = useContext(CalculatorContext)
+
 
     return (
         <div className='calc'>
             <History/>
             <div className='calc__panels'>
-                <SecondPanel/>
-                <MainPanel operation={input}/>
+                <SecondPanel result={result}/>
+                <MainPanel operation={input} handleChange={manejadorCambio}/>
                 <div className="calc__btns">
                     <div className="calc__btns-basic">
                         {
@@ -64,10 +63,15 @@ const Calculator = () => {
                                 return <Button 
                                     className={`calc__btn-basic ${btn.name}`} 
                                     key={btn.id} 
-                                    text={btn.text} 
+                                    text={btn.text}
+                                    handleClick={handleClick}
                                 />
                             })
                         }
+                        <Button className={`calc__btn-basic clear`} text="C" />
+                        <Button className={`calc__btn-basic clear-all`} text="CE" handleClick={handleReset}/>
+                        <Button className={`calc__btn-basic del`} text="DEL" handleClick={handleDel}/>
+                        <Button className={`calc__btn-basic equals`} text="=" handleClick={handleResult}/>
                     </div>
                     <div className="calc__btns-op">
                         {
@@ -76,6 +80,8 @@ const Calculator = () => {
                                     className={`calc__btn-op ${btn.name}`}
                                     key={btn.id}
                                     text={btn.text}
+                                    value={btn.value}
+                                    handleClick={handleClick}
                                 />
                             })
                         }
