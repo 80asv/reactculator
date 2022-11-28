@@ -3,7 +3,7 @@ import './MainPanel.scss'
 
 const MainPanel = ({ operation }) => {
   return (
-    <div className='main-panel'>{operation}</div>
+    <div className='main-panel'>{operation}panel</div>
   )
 }
 
