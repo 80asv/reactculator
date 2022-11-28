@@ -43,19 +43,17 @@ const operations = [
     {id: 15, text: "sqrt()", name: "sqrt", value: "sqrt("},
 ]
 
-const manejadorCambio = () => console.log("cambiaaaaa");
-
 const Calculator = () => {
 
-    const { input, handleClick, handleReset, handleDel, handleResult, result } = useContext(CalculatorContext)
+    const { input, putChar, resetAll, deleteChar, showResult, operation, resetOperation } = useContext(CalculatorContext)
 
 
     return (
         <div className='calc'>
             <History/>
             <div className='calc__panels'>
-                <SecondPanel result={result}/>
-                <MainPanel operation={input} handleChange={manejadorCambio}/>
+                <SecondPanel result={operation} />
+                <MainPanel operation={input} />
                 <div className="calc__btns">
                     <div className="calc__btns-basic">
                         {
@@ -64,14 +62,14 @@ const Calculator = () => {
                                     className={`calc__btn-basic ${btn.name}`} 
                                     key={btn.id} 
                                     text={btn.text}
-                                    handleClick={handleClick}
+                                    handleClick={putChar}
                                 />
                             })
                         }
-                        <Button className={`calc__btn-basic clear`} text="C" />
-                        <Button className={`calc__btn-basic clear-all`} text="CE" handleClick={handleReset}/>
-                        <Button className={`calc__btn-basic del`} text="DEL" handleClick={handleDel}/>
-                        <Button className={`calc__btn-basic equals`} text="=" handleClick={handleResult}/>
+                        <Button className={`calc__btn-basic clear`} text="C" handleClick={resetOperation}/>
+                        <Button className={`calc__btn-basic clear-all`} text="CE" handleClick={resetAll}/>
+                        <Button className={`calc__btn-basic del`} text="DEL" handleClick={deleteChar}/>
+                        <Button className={`calc__btn-basic equals`} text="=" handleClick={showResult}/>
                     </div>
                     <div className="calc__btns-op">
                         {
@@ -81,7 +79,7 @@ const Calculator = () => {
                                     key={btn.id}
                                     text={btn.text}
                                     value={btn.value}
-                                    handleClick={handleClick}
+                                    handleClick={putChar}
                                 />
                             })
                         }

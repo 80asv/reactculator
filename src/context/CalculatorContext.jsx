@@ -5,55 +5,62 @@ export const CalculatorContext = createContext();
 
 export default function CalulatorContextProvider({ children }) {
     const [input, setInput] = useState("");
-    const [result, setResult] = useState("");
+    const [operation, setOperation] = useState("");
+    const [isResolved, setIsResolved] = useState(false);
 
-    const handleClick = (e) => {
+    const putChar = (e) => {
+        
+        let value = e.target.value;
+        let lastChar = operation.split('')[operation.length - 1];
+
         const ops = ["+", "-", "/", "%", "*", "^"]
         const funcs = ["(", ")", "cos(", "tan("]
-        let value = e.target.value;
-        //let lastChar = input.split('')[input.length - 1];
-        let lastChar = result.split('')[result.length - 1];
 
-        // if(!ops.includes(value)){
-        //     setInput(input + value);
-        // } else {
-        //     if(ops.includes(lastChar)){
-        //         setInput(input.substring(0, input.length - 1) + value);
-        //         handleResult();
-        //     } else{
-        //         setInput(input + value);
-        //     }
-        // }
+        if(isResolved){
+            setOperation("");
+            setIsResolved(false);
+        }
 
         if(!ops.includes(value)){
             setInput(input+value);
         } else {
             if(ops.includes(lastChar) && !input){
                 if(funcs.includes(value) && ops.includes(lastChar)){
-                    setResult(result + value);
+                    setOperation(operation + value);
                 } else {
-                    setResult(result.substring(0, result.length - 1) + value)
+                    setOperation(operation.substring(0, operation.length - 1) + value)
                     setInput("");
                 }
             } else {
                 let concat = input + value
-                setResult(result + concat);
+                setOperation(operation + concat);
                 setInput("");
             }
         }
     };
 
-    const handleResult = () => {
-        let res = evaluate(input);
-        setResult(res);
+    const showResult = () => {
+        try {
+            setIsResolved(true);
+            let concat = operation + input;
+            setOperation(concat);
+            setInput(evaluate(concat));
+        } catch (error) {
+            console.log(error);
+        }
     }
 
-    const handleReset = () => {
+    const resetAll = () => {
+        setIsResolved(false);
         setInput("");
-        setResult("");
-    };
+        setOperation("");
+    }
 
-    const handleDel = () => {
+    const resetOperation = () => setOperation("")
+
+    
+
+    const deleteChar = () => {
         let del = input.substring(0, input.length - 1);
         setInput(del);
     };
@@ -61,7 +68,7 @@ export default function CalulatorContextProvider({ children }) {
 
 
 
-    const data = { input, handleClick, handleReset, handleDel, result, handleResult }
+    const data = { input, putChar, resetAll, deleteChar, operation, showResult, resetOperation }
 
     return(
         <CalculatorContext.Provider value={data}>
