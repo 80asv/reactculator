@@ -16,25 +16,33 @@ export default function CalulatorContextProvider({ children }) {
         const ops = ["+", "-", "/", "%", "*", "^"]
         const funcs = ["(", ")", "cos(", "tan("]
 
-        if(isResolved){
-            setOperation("");
-            setIsResolved(false);
-        }
+        if(isResolved) resetOperation(); // si antes ya se ha ejecutado una respuesta resetea todos los campos
 
         if(!ops.includes(value)){
             setInput(input+value);
+            console.log(1)
         } else {
+            console.log(2)
             if(ops.includes(lastChar) && !input){
+                console.log(3)
                 if(funcs.includes(value) && ops.includes(lastChar)){
+                    console.log(4)
                     setOperation(operation + value);
                 } else {
+                    console.log(5)
                     setOperation(operation.substring(0, operation.length - 1) + value)
                     setInput("");
                 }
             } else {
-                let concat = input + value
-                setOperation(operation + concat);
-                setInput("");
+                console.log(6)
+                if(isResolved){
+                    resetOperation();
+                    setInput(input+value);
+                } else {
+                    let concat = input + value
+                    setOperation(operation + concat);
+                    setInput("");
+                }
             }
         }
     };
@@ -56,7 +64,10 @@ export default function CalulatorContextProvider({ children }) {
         setOperation("");
     }
 
-    const resetOperation = () => setOperation("")
+    const resetOperation = () => {
+        setOperation("")
+        setIsResolved(false);
+    }
 
     
 
