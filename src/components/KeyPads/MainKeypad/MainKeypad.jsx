@@ -8,21 +8,21 @@ const MainKeypad = () => {
     const {putChar} = useContext(CalculatorContext);
   return (
     <div className='main-keypad'>
-        <div className='main-keypad__numbers'>
-            <Button className="main-keypad__number">1</Button>
-            <Button className="main-keypad__number">2</Button>
-            <Button className="main-keypad__number">3</Button>
-            <Button className="main-keypad__number">4</Button>
-            <Button className="main-keypad__number">5</Button>
-            <Button className="main-keypad__number">6</Button>
-            <Button className="main-keypad__number">7</Button>
-            <Button className="main-keypad__number">8</Button>
-            <Button className="main-keypad__number">9</Button>
-            <Button className="main-keypad__operation">+</Button>
-            <Button className="main-keypad__operation">-</Button>
-            <Button className="main-keypad__operation">x</Button>
-            <Button className="main-keypad__operation">/</Button>
-        </div>
+        <Button className="main-keypad__number one">1</Button>
+        <Button className="main-keypad__number two">2</Button>
+        <Button className="main-keypad__number three">3</Button>
+        <Button className="main-keypad__number four">4</Button>
+        <Button className="main-keypad__number five">5</Button>
+        <Button className="main-keypad__number six">6</Button>
+        <Button className="main-keypad__number seven">7</Button>
+        <Button className="main-keypad__number eight">8</Button>
+        <Button className="main-keypad__number nine">9</Button>
+        <Button className="main-keypad__number zero">0</Button>
+        <Button className="main-keypad__number dot">.</Button>
+        <Button className="main-keypad__operation add">+</Button>
+        <Button className="main-keypad__operation subtract">-</Button>
+        <Button className="main-keypad__operation multiply">x</Button>
+        <Button className="main-keypad__operation split">/</Button>
     </div>
   )
 }
