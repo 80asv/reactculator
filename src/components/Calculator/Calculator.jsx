@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
 import { CalculatorContext } from '../../context/calculatorContext'
 import Button from '../Button/Button'
+import Controls from '../Controls/Controls'
 import History from '../History/History'
+import MainKeypad from '../KeyPads/MainKeypad/MainKeypad'
 import MainPanel from '../Panel/MainPanel/MainPanel'
 import SecondPanel from '../Panel/SecondPanel/SecondPanel'
 import './Calculator.scss'
@@ -49,42 +51,7 @@ const Calculator = () => {
 
     return (
         <div className='calc'>
-            <History/>
-            <div className='calc__panels'>
-                <SecondPanel result={operation} />
-                <MainPanel operation={input} />
-                <div className="calc__btns">
-                    <div className="calc__btns-basic">
-                        {
-                            btns_basics.map((btn) => {
-                                return <Button 
-                                    className={`calc__btn-basic ${btn.name}`} 
-                                    key={btn.id} 
-                                    text={btn.text}
-                                    handleClick={putChar}
-                                />
-                            })
-                        }
-                        <Button className={`calc__btn-basic clear`} text="C" handleClick={resetOperation}/>
-                        <Button className={`calc__btn-basic clear-all`} text="CE" handleClick={resetAll}/>
-                        <Button className={`calc__btn-basic del`} text="DEL" handleClick={deleteChar}/>
-                        <Button className={`calc__btn-basic equals`} text="=" handleClick={showResult}/>
-                    </div>
-                    <div className="calc__btns-op">
-                        {
-                            operations.map((btn) => {
-                                return <Button
-                                    className={`calc__btn-op ${btn.name}`}
-                                    key={btn.id}
-                                    text={btn.text}
-                                    value={btn.value}
-                                    handleClick={putChar}
-                                />
-                            })
-                        }
-                    </div>
-                </div>
-            </div>
+            <MainKeypad/>
         </div>
     )
 }
