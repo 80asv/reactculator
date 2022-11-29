@@ -26,18 +26,18 @@ const btns_basics = [
 ]
 
 const operations = [
-    {id: 1, text: "Inv", name: "inv", value: ""},
-    {id: 2, text: "rad", name: "rad", value: ""},
+    {id: 1, text: "Inv", name: "inv", value: "inv("},
+    {id: 2, text: "Mod", name: "mod", value: "%"},
     {id: 3, text: "sin", name: "sin", value: "sin("},
     {id: 4, text: "cos", name: "cos", value: "cos("},
-    {id: 5, text: "Tan", name: "tan", value: "tg("},
+    {id: 5, text: "Tan", name: "tan", value: "tan("},
     {id: 6, text: "%", name: "percentage", value: "%"},
     {id: 7, text: "In", name: "in", value: "log2("},
     {id: 8, text: "Log", name: "log", value: "log("},
     {id: 9, text: "!", name: "factorial"},
-    {id: 10, text: "^", name: "exponential", value: ""},
+    {id: 10, text: "^", name: "exponential"},
     {id: 11, text: "PI", name: "pi", value: "3.1416"},
-    {id: 12, text: "e", name: "euler", value: "e("},
+    {id: 12, text: "e", name: "euler", value: "2.71828"},
     {id: 13, text: "(", name: "bracket-left"},
     {id: 14, text: ")", name: "bracket-right"},
     {id: 15, text: "sqrt()", name: "sqrt", value: "sqrt("},

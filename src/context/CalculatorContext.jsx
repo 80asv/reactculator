@@ -14,27 +14,21 @@ export default function CalulatorContextProvider({ children }) {
         let lastChar = operation.split('')[operation.length - 1];
 
         const ops = ["+", "-", "/", "%", "*", "^"]
-        const funcs = ["(", ")", "cos(", "tan("]
+        const funcs = ["(", ")", "cos(", "tan(", "inv("]
 
         if(isResolved) resetOperation(); // si antes ya se ha ejecutado una respuesta resetea todos los campos
 
         if(!ops.includes(value)){
             setInput(input+value);
-            console.log(1)
         } else {
-            console.log(2)
             if(ops.includes(lastChar) && !input){
-                console.log(3)
                 if(funcs.includes(value) && ops.includes(lastChar)){
-                    console.log(4)
                     setOperation(operation + value);
                 } else {
-                    console.log(5)
                     setOperation(operation.substring(0, operation.length - 1) + value)
                     setInput("");
                 }
             } else {
-                console.log(6)
                 if(isResolved){
                     resetOperation();
                     setInput(input+value);
@@ -54,7 +48,7 @@ export default function CalulatorContextProvider({ children }) {
             setOperation(concat);
             setInput(evaluate(concat));
         } catch (error) {
-            console.log(error);
+            console.log("operacion errada");
         }
     }
 
