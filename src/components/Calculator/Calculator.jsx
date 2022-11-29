@@ -40,13 +40,12 @@ const operations = [
     {id: 12, text: "e", name: "euler", value: "2.71828"},
     {id: 13, text: "(", name: "bracket-left"},
     {id: 14, text: ")", name: "bracket-right"},
-    {id: 15, text: "sqrt()", name: "sqrt", value: "sqrt("},
+    {id: 15, text: "v-", name: "sqrt", value: "sqrt("},
 ]
 
 const Calculator = () => {
 
     const { input, putChar, resetAll, deleteChar, showResult, operation, resetOperation } = useContext(CalculatorContext)
-
 
     return (
         <div className='calc'>

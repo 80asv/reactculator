@@ -1,9 +1,8 @@
 import React from 'react'
-import './History.scss'
 
 const History = () => {
   return (
-    <div className='history'>History</div>
+    <div className='calc__history'>History</div>
   )
 }
 

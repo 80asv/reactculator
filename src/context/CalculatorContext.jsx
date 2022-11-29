@@ -4,6 +4,7 @@ import { evaluate } from 'mathjs'
 export const CalculatorContext = createContext();
 
 export default function CalulatorContextProvider({ children }) {
+    
     const [input, setInput] = useState("");
     const [operation, setOperation] = useState("");
     const [isResolved, setIsResolved] = useState(false);
@@ -63,15 +64,10 @@ export default function CalulatorContextProvider({ children }) {
         setIsResolved(false);
     }
 
-    
-
     const deleteChar = () => {
         let del = input.substring(0, input.length - 1);
         setInput(del);
     };
-
-
-
 
     const data = { input, putChar, resetAll, deleteChar, operation, showResult, resetOperation }
 
