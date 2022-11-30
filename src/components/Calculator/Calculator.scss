@@ -1,1 +1,29 @@
 @import '../../scss/abstracts/variables';
+
+.calc{
+    &__panels{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 0 11.4375rem 3.875rem;
+        gap: 0.625rem;
+
+        height: 25.6875rem;
+
+        background: $blackColor;
+    }
+
+    &__keypads{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin: auto;
+        max-width: 146rem;
+        padding: 90px 183px;
+        gap: 2rem;
+
+    }
+}

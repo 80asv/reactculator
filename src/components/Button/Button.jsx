@@ -1,8 +1,16 @@
 import React from 'react'
+import {motion} from 'framer-motion';
 
-const Button = ({ value,text, handleClick, className, children }) => {
+const Button = ({ value, handleClick, className, children }) => {
   return (
-    <button className={className} onClick={handleClick} value={value ? value : text }>{children}</button>
+    <motion.button 
+        className={className} 
+		onClick={() => handleClick(value)}
+		whileHover={{ scale: 1.02 }}
+    	whileTap={{ scale: 0.9 }}
+	>
+		{children}
+	</motion.button>
   )
 }
 

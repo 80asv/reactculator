@@ -6,6 +6,8 @@
     flex-direction: row;
     align-items: center;
     gap: 1.3rem;
+    position: absolute;
+    top: -3.75rem;
 
     &__equals-btn{
         display: flex;
@@ -19,8 +21,6 @@
         height: 7.3rem;
         background: $roseColor;
         border-radius: 2.3rem;
-        
-        
     }
 
     &__clear-btn{

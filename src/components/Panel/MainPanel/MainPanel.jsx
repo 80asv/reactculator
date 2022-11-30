@@ -1,13 +1,17 @@
 import React from 'react'
 import './MainPanel.scss'
+import {motion} from 'framer-motion';
 
-const MainPanel = ({ operation }) => {
-  return (
-    // <div className='calc__main-panel'>
-    //   <p>{operation === "" ? "0" : operation }</p>
-    // </div>
-    <input type="text" className='calc__main-panel' value={operation === '' ? "0" : operation}/>
-  )
+const MainPanel = ({ operation,  }) => {
+
+    return (
+      	<motion.input 
+			type="text" 
+			className='main-panel' 
+			value={operation === '' ? "0" : operation} 
+			readOnly
+		/>
+    )
 }
 
 export default MainPanel

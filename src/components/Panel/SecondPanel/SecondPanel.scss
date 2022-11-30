@@ -1,4 +1,18 @@
+@import '../../../scss/abstracts/variables';
+
 .second-panel{
-    background-color: chartreuse;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.625rem;
+    gap: 0.625rem;
+    outline: none;
+
+    width: 100%;
+    height: 5.6rem;
+
+    font-weight: 400;
+    font-size: 5rem;
+    color: $whiteColor;
     text-align: right;
 }

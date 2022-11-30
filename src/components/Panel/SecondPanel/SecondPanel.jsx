@@ -3,10 +3,7 @@ import './SecondPanel.scss'
 
 const SecondPanel = ({ result }) => {
   return (
-    // <div className='calc__second-panel'>
-    //   <p>{result === "" ? "0" : result }</p>
-    // </div>
-    <input type="text" className='calc__second-panel' value={result === "" ? "0" : result}/>
+    <input type="text" className='second-panel' value={result === "" ? "0" : result} readOnly/>
   )
 }
 

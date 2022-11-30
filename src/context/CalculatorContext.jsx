@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import { evaluate } from 'mathjs'
 
 export const CalculatorContext = createContext();
@@ -9,15 +9,14 @@ export default function CalulatorContextProvider({ children }) {
     const [operation, setOperation] = useState("");
     const [isResolved, setIsResolved] = useState(false);
 
-    const putChar = (e) => {
-        
-        let value = e.target.value;
+    const putChar = (valor = null) => {
+        let value = valor;
         let lastChar = operation.split('')[operation.length - 1];
-
+        
         const ops = ["+", "-", "/", "%", "*", "^"]
         const funcs = ["(", ")", "cos(", "tan(", "inv("]
 
-        if(isResolved) resetOperation(); // si antes ya se ha ejecutado una respuesta resetea todos los campos
+        if(isResolved) resetOperation();
 
         if(!ops.includes(value)){
             setInput(input+value);
@@ -43,13 +42,20 @@ export default function CalulatorContextProvider({ children }) {
     };
 
     const showResult = () => {
-        try {
-            setIsResolved(true);
-            let concat = operation + input;
-            setOperation(concat);
-            setInput(evaluate(concat));
-        } catch (error) {
-            console.log("operacion errada");
+        if(isResolved){
+            setInput("");
+            setOperation("");
+        } else {
+            try {
+                setIsResolved(true);
+                let concat = operation + input;
+                setOperation(concat);
+                setInput(evaluate(concat));
+                
+            } catch (error) {
+                setOperation("");
+                setInput("!Error");
+            }
         }
     }
 

@@ -1,6 +1,23 @@
+@import '../../../scss/abstracts/variables';
+
 .main-panel{
-    background-color: grey;
-    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.625rem;
+    gap: 0.625rem;
+    outline: none;
+    transition: all .2s ease-in-out;
+
+    width: 100%;
+    height: 7.06rem;
+
+    font-weight: 400;
+    font-size: 4.5rem;
+    color: #f74968;
     text-align: right;
-    color: white;
+
+    &.resolved{
+        font-size: 6rem;
+    }
 }
