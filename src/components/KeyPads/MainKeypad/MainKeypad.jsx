@@ -4,8 +4,9 @@ import { useModal } from '../../../hooks/useModal'
 import Button from '../../Button/Button'
 import ModalKeypad from '../../ModalKeypad/ModalKeypad'
 import SecondKeyPad from '../SecondKeyPad/SecondKeyPad'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 import './MainKeypad.scss'
-import { motion } from 'framer-motion'
 
 const MainKeypad = () => {
 
@@ -50,7 +51,9 @@ const MainKeypad = () => {
                     <rect x="14" y="24.5" width="8" height="8" rx="4" fill="#191919"/>
                 </svg>
             </Button>
-            <button className='more-ops' onClick={openModal}>more</button>
+            <button className='more-ops' onClick={openModal}>
+                <FontAwesomeIcon icon={faLocationArrow}/>
+            </button>
             {
                 isOpen && 
                 <ModalKeypad handleClose={closeModal} isOpen={isOpen}>

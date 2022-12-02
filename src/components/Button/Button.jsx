@@ -6,7 +6,7 @@ const Button = ({ value, handleClick, className, children }) => {
     <motion.button 
         className={className} 
 		onClick={() => handleClick(value)}
-		whileHover={{ scale: 1.02 }}
+		whileHover={{ scale: 1.08 }}
     	whileTap={{ scale: 0.9 }}
 	>
 		{children}
