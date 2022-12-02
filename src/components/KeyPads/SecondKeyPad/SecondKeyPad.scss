@@ -3,7 +3,7 @@
 .second-keypad{
 
     display: grid;
-    grid-template-columns: repeat(4, minmax(4rem, 5.49rem));
+    grid-template-columns: repeat(4, minmax(2.875rem, 5.49rem));
     grid-template-rows: repeat(4, minmax(4rem, 4.1775rem));
     gap: 1.3rem;
 
@@ -27,9 +27,27 @@
         padding: 10px;
         background: #E1E1E1;
         border-radius: 23px;
+        cursor: pointer;
 
         font-weight: 700;
         font-size: 24px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: all .1s ease-in-out;
+
+        &:hover{
+            background: #fb607c;
+            color: #E1E1E1;
+            
+            -webkit-box-shadow:0px 0px 57px 0px rgba(250,73,105,0.35);
+            -moz-box-shadow: 0px 0px 57px 0px rgba(250,73,105,0.35);
+            box-shadow: 0px 0px 57px 0px rgba(250,73,105,0.35);
+        }
+
+        @media screen and (max-width: 80.625rem){
+            font-size: 1rem;
+            &.pi svg , &.sqrt svg{
+                height: 1rem;
+            }
+        }
     }
 }

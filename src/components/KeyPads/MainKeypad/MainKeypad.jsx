@@ -1,11 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { CalculatorContext } from '../../../context/calculatorContext'
 import Button from '../../Button/Button'
 import './MainKeypad.scss'
 
 const MainKeypad = () => {
 
-    const {putChar} = useContext(CalculatorContext);
+    const {putChar } = useContext(CalculatorContext);
+
+    // useEffect(() => {
+    //   document.addEventListener("keypress", dectectKey, true);
+    
+    //   return () => {
+    //     document.removeEventListener("keypress", dectectKey);
+    //   }
+    // }, []);
+
+    // const dectectKey = (e) => {
+    //     putChar(e.key);
+    // }
+    
     
     return (
         <div className='main-keypad'>

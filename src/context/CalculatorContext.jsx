@@ -9,12 +9,14 @@ export default function CalulatorContextProvider({ children }) {
     const [operation, setOperation] = useState("");
     const [isResolved, setIsResolved] = useState(false);
 
-    const putChar = (valor = null) => {
-        let value = valor;
-        let lastChar = operation.split('')[operation.length - 1];
+    const putChar = (value = null) => {
         
-        const ops = ["+", "-", "/", "%", "*", "^"]
-        const funcs = ["(", ")", "cos(", "tan(", "inv("]
+        let lastChar = operation.split('')[operation.length - 1];
+        const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+        const ops = ["+", "-", "/", "%", "*", "^", ".", "e"];
+        const funcs = ["(", ")", "cos(", "tan(", "inv(", "sin(", "log2(", "log(", "!", "^", "3.1416", ""];
+
+        if(!numbers.includes(value) && !ops.includes(value) && !funcs.includes(value)) return;
 
         if(isResolved) resetOperation();
 
@@ -73,9 +75,13 @@ export default function CalulatorContextProvider({ children }) {
     const deleteChar = () => {
         let del = input.substring(0, input.length - 1);
         setInput(del);
-    };
+    }
 
-    const data = { input, putChar, resetAll, deleteChar, operation, showResult, resetOperation }
+    const handleKeyPress = (event) => {
+        console.log('enter press here! ' + event)
+    }
+
+    const data = { input, putChar, resetAll, deleteChar, operation, showResult, resetOperation, handleKeyPress }
 
     return(
         <CalculatorContext.Provider value={data}>

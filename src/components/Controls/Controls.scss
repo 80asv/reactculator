@@ -21,6 +21,19 @@
         height: 7.3rem;
         background: $roseColor;
         border-radius: 2.3rem;
+
+        border-width: 6px 6px 12px 6px;
+        border-style: solid;
+        border-color: #F74968;
+
+        @media screen and (max-width: 80.625rem){
+            width: 6em;
+            height: 6rem;
+            border-radius: 1.8rem;
+            & svg{
+                height: 1.4rem;
+            }
+        }
     }
 
     &__clear-btn{
@@ -45,6 +58,15 @@
         border-color: #DBDBDB;
         box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
         border-radius: 2.3rem;
+
+        @media screen and (max-width: 80.625rem){
+            width: 5.625rem;
+            font-size: 1.3125rem;
+        }
+    }
+
+    @media screen and (max-width: 80.625rem) {
+        top: -3.125rem;
     }
 
 }

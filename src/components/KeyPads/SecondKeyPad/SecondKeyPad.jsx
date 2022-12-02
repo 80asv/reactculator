@@ -14,7 +14,6 @@ const operations = [
     {id: 8, text: "Log", name: "log", value: "log("},
     {id: 9, text: "!", name: "factorial", value: "!"},
     {id: 10, text: "^", name: "exponential", value: "^"},
-    {id: 11, text: "PI", name: "pi", value: "3.1416"},
     {id: 12, text: "e", name: "euler", value: "2.71828"},
     {id: 13, text: "(", name: "bracket-left", value: "("},
     {id: 14, text: ")", name: "bracket-right", value: ")"},
@@ -37,6 +36,13 @@ const SecondKeyPad = () => {
                     <rect width="24" height="21" fill="white" transform="translate(0.600891 0.581329)"/>
                     </clipPath>
                     </defs>
+                </svg>
+            </Button>
+            <Button className="second-keypad__op-btn pi" value="3.1416" handleClick={putChar}>
+                <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="7.58801" y1="2.53537" x2="7.58801" y2="17.4887" stroke="#656565" strokeWidth="4" strokeLinecap="round"/>
+                    <line x1="15.9275" y1="2.53537" x2="15.9275" y2="15.2143" stroke="#656565" strokeWidth="4" strokeLinecap="round"/>
+                    <line x1="20.267" y1="2.53537" x2="2.28106" y2="2.53537" stroke="#656565" strokeWidth="4" strokeLinecap="round"/>
                 </svg>
             </Button>
         </div>
