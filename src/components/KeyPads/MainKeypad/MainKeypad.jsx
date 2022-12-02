@@ -5,6 +5,7 @@ import Button from '../../Button/Button'
 import ModalKeypad from '../../ModalKeypad/ModalKeypad'
 import SecondKeyPad from '../SecondKeyPad/SecondKeyPad'
 import './MainKeypad.scss'
+import { motion } from 'framer-motion'
 
 const MainKeypad = () => {
 
