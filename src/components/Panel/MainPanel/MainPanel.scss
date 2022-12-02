@@ -20,4 +20,9 @@
     &.resolved{
         font-size: 6rem;
     }
+
+    @media screen and (max-width: 41.25rem) {
+        font-size: 2rem;
+        height: 4.375rem;
+    }
 }

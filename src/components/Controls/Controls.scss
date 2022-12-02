@@ -8,6 +8,7 @@
     gap: 1.3rem;
     position: absolute;
     top: -3.75rem;
+    flex-wrap: wrap;
 
     &__equals-btn{
         display: flex;
@@ -32,6 +33,16 @@
             border-radius: 1.8rem;
             & svg{
                 height: 1.4rem;
+            }
+        }
+
+        @media screen and (max-width: 41.25rem) {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            border-width: 4px 4px 7px 4px;
+            & svg{
+                height: 13px;
             }
         }
     }
@@ -63,10 +74,24 @@
             width: 5.625rem;
             font-size: 1.3125rem;
         }
+        
+        @media screen and (max-width: 41.25rem){
+            width: 2.625rem;
+            height: 2.1875rem;
+            font-size: 0.875rem;
+            border-width: 2px 2px 4px 2px;
+            border-radius: 0.6875rem;
+        }
     }
 
     @media screen and (max-width: 80.625rem) {
         top: -3.125rem;
     }
 
+    @media screen and (max-width: 41.25rem) {
+        top: -29px;
+        gap: .8rem;
+        margin-left: 2.1875rem;
+        left: 0;
+    }
 }

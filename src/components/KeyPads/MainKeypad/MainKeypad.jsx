@@ -6,19 +6,6 @@ import './MainKeypad.scss'
 const MainKeypad = () => {
 
     const {putChar } = useContext(CalculatorContext);
-
-    // useEffect(() => {
-    //   document.addEventListener("keypress", dectectKey, true);
-    
-    //   return () => {
-    //     document.removeEventListener("keypress", dectectKey);
-    //   }
-    // }, []);
-
-    // const dectectKey = (e) => {
-    //     putChar(e.key);
-    // }
-    
     
     return (
         <div className='main-keypad'>
@@ -57,6 +44,7 @@ const MainKeypad = () => {
                     <rect x="14" y="24.5" width="8" height="8" rx="4" fill="#191919"/>
                 </svg>
             </Button>
+            <button className='more-ops'>more</button>
         </div>
     )
 }

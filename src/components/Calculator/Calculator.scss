@@ -12,6 +12,11 @@
         height: 25.6875rem;
 
         background: $blackColor;
+
+        @media screen and (max-width: 660px) {
+            padding: 0 2.1875rem 3.875rem;
+            height: 23.6875rem;
+        }
     }
 
     &__keypads{
@@ -24,8 +29,15 @@
         max-width: 146rem;
         padding: 90px 183px;
         gap: 5rem;
+        flex-wrap: nowrap;
 
-        
+        @media screen and (max-width: 64.9375rem){
+            flex-wrap: wrap;
+        }
 
+        @media screen and (max-width: 660px) {
+            padding: 5.1875rem 2.1875rem 3.875rem;
+            justify-content: center;
+        }
     }
 }

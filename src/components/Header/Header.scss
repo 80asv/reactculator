@@ -37,6 +37,23 @@
         color: $whiteColor;
         font-weight: 700;
     }
+
+    @media screen and (max-width: 41.25rem) {
+        padding: 10px 35px;
+
+        &__logo{
+            gap: 0.625rem;
+        }
+
+        &__logo-img{
+            width: 1.9375rem;
+            height: 1.9375rem;
+        }
+
+        &__logo-h1{
+            font-size: 0.9375rem;
+        }
+    }
 }
 
 @keyframes gradient {
