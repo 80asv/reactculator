@@ -1,11 +1,16 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { CalculatorContext } from '../../../context/calculatorContext'
+import { useModal } from '../../../hooks/useModal'
 import Button from '../../Button/Button'
+import ModalKeypad from '../../ModalKeypad/ModalKeypad'
+import SecondKeyPad from '../SecondKeyPad/SecondKeyPad'
 import './MainKeypad.scss'
 
 const MainKeypad = () => {
 
     const {putChar } = useContext(CalculatorContext);
+
+    const [isOpen, openModal, closeModal] = useModal();
     
     return (
         <div className='main-keypad'>
@@ -44,7 +49,13 @@ const MainKeypad = () => {
                     <rect x="14" y="24.5" width="8" height="8" rx="4" fill="#191919"/>
                 </svg>
             </Button>
-            <button className='more-ops'>more</button>
+            <button className='more-ops' onClick={openModal}>more</button>
+            {
+                isOpen && 
+                <ModalKeypad handleClose={closeModal} isOpen={isOpen}>
+                    <SecondKeyPad/>
+                </ModalKeypad>
+            }
         </div>
     )
 }

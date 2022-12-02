@@ -1,5 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CalculatorContext } from '../../context/calculatorContext'
+import { useResize } from '../../hooks/useResize'
 import Controls from '../Controls/Controls'
 import MainKeypad from '../KeyPads/MainKeypad/MainKeypad'
 import SecondKeyPad from '../KeyPads/SecondKeyPad/SecondKeyPad'
@@ -9,6 +10,7 @@ import './Calculator.scss'
 
 const Calculator = () => {
     const { input, operation } = useContext(CalculatorContext)
+    const { width } = useResize();
     return (
         <div className='calc'>
             <div className='calc__panels'>
@@ -18,7 +20,7 @@ const Calculator = () => {
             <div className='calc__keypads'>
                 <Controls/>
                 <MainKeypad/>
-                <SecondKeyPad/>
+                { width >= 660 && <SecondKeyPad/>}
             </div>
         </div>
     )
