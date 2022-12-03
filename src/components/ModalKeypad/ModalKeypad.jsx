@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import './ModalKeypad.scss'
+import React from 'react'
 import { motion } from 'framer-motion'
+import './ModalKeypad.scss'
 
 const ModalKeypad = ({ children, handleClose, isOpen }) => {
 

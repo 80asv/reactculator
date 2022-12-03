@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { CalculatorContext } from '../../context/calculatorContext'
+import SecondKeyPad from '../KeyPads/SecondKeyPad/SecondKeyPad'
+import SecondPanel from '../Panel/SecondPanel/SecondPanel'
+import MainKeypad from '../KeyPads/MainKeypad/MainKeypad'
+import MainPanel from '../Panel/MainPanel/MainPanel'
 import { useResize } from '../../hooks/useResize'
 import Controls from '../Controls/Controls'
-import MainKeypad from '../KeyPads/MainKeypad/MainKeypad'
-import SecondKeyPad from '../KeyPads/SecondKeyPad/SecondKeyPad'
-import MainPanel from '../Panel/MainPanel/MainPanel'
-import SecondPanel from '../Panel/SecondPanel/SecondPanel'
 import './Calculator.scss'
 
 const Calculator = () => {

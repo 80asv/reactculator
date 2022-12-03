@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useState } from "react";
 import { evaluate } from 'mathjs'
 
 export const CalculatorContext = createContext();

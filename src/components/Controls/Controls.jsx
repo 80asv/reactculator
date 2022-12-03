@@ -1,7 +1,7 @@
+import { CalculatorContext } from '../../context/calculatorContext'
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
-import { CalculatorContext } from '../../context/calculatorContext'
 import Button from '../Button/Button'
 import './Controls.scss'
 

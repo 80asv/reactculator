@@ -1,18 +1,17 @@
 import React, { useContext } from 'react'
 import { CalculatorContext } from '../../../context/calculatorContext'
-import { useModal } from '../../../hooks/useModal'
-import Button from '../../Button/Button'
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ModalKeypad from '../../ModalKeypad/ModalKeypad'
 import SecondKeyPad from '../SecondKeyPad/SecondKeyPad'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+import { useModal } from '../../../hooks/useModal'
+import Button from '../../Button/Button'
 import './MainKeypad.scss'
 
 const MainKeypad = () => {
 
-    const {putChar } = useContext(CalculatorContext);
-
     const [isOpen, openModal, closeModal] = useModal();
+    const {putChar } = useContext(CalculatorContext);
     
     return (
         <div className='main-keypad'>

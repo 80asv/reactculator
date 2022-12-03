@@ -1,5 +1,5 @@
-import React from 'react'
 import {motion} from 'framer-motion';
+import React from 'react'
 
 const Button = ({ value, handleClick, className, children }) => {
   return (
@@ -13,5 +13,4 @@ const Button = ({ value, handleClick, className, children }) => {
 	</motion.button>
   )
 }
-
 export default Button
