@@ -23,6 +23,24 @@
     .bracket-right { grid-area: 4 / 3 / 5 / 4; }
     .sqrt { grid-area: 4 / 4 / 5 / 5; }
 
+
+    #dark &__op-btn{
+        background-color: #313131;
+        color: #fff;
+
+        &:hover{
+            background: #f74968;
+        }
+        
+        &.pi svg > * {
+            stroke: #fff;
+        }
+        
+        &.sqrt svg > * > *{
+            fill: #fff;
+        }
+    }
+
     &__op-btn{
         padding: 10px;
         background: #E1E1E1;
@@ -50,6 +68,8 @@
             }
         }
     }
+
+    
 
     @media screen and (max-width: 41.25rem) {
         

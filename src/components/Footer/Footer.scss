@@ -1,0 +1,77 @@
+@import '../../scss/abstracts/variables';
+.footer{
+
+    background-color: $blackColor;
+    height: 80vh;
+    color: white;
+    
+    &__container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 10rem;
+    }
+
+    &__p{ font-style: italic; font-size: 1.5rem;}
+
+    &__img{
+        height: 11rem;
+        width: 11rem;
+
+        animation: rotate-center 15s linear infinite both;
+        
+        @media screen and (max-width: 41.25rem){
+            height: 8rem;
+            width: 8rem;
+        }
+
+        @-webkit-keyframes rotate-center {
+            0% {
+              -webkit-transform: rotate(0);
+                      transform: rotate(0);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+                      transform: rotate(360deg);
+            }
+          }
+          @keyframes rotate-center {
+            0% {
+              -webkit-transform: rotate(0);
+                      transform: rotate(0);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+                      transform: rotate(360deg);
+            }
+          }
+    }
+
+    &__h2{font-size: 2.5rem}
+    &__icon{font-size: 2rem;}
+
+    &__gradient-line{
+        width: 100%;
+        position: relative;
+        background: linear-gradient(80deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+        background-size: 800%;
+        animation: gradient 5s linear infinite;
+        animation-direction: alternate;
+        height: 5px;
+
+        @keyframes gradient {
+            0% {background-position: 0%}
+            100% {background-position: 100%}
+        }
+    }
+
+    @media screen and (max-width: 41.25rem){
+        &__img{height: 8rem;width: 8rem;}
+        &__h2{font-size: 1.6rem;}
+        &__icon{font-size: 1.8rem;}
+        &__p{ font-size: 1rem;}
+    }
+}

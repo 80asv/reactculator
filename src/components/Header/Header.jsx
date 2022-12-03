@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeToggle from '../ThemeToggle/ThemeToggle'
 import './Header.scss'
 
 const Header = () => {
@@ -8,6 +9,7 @@ const Header = () => {
         <div className='header__logo-img'></div>
         <h1 className='header__logo-h1'>REACTCULATORRR</h1>
       </div>
+      <ThemeToggle/>
     </div>
   )
 }

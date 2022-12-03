@@ -9,7 +9,7 @@ import SecondPanel from '../Panel/SecondPanel/SecondPanel'
 import './Calculator.scss'
 
 const Calculator = () => {
-    const { input, operation } = useContext(CalculatorContext)
+    const { input, operation } = useContext(CalculatorContext);
     const { width } = useResize();
     return (
         <div className='calc'>

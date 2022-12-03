@@ -57,6 +57,14 @@
         }
     }
 
+    #dark &__equals-btn{
+        border-color: #1a1a1a8a;
+
+        svg > * {
+            fill: #ffffff;
+        }
+    }
+
     &__clear-btn{
         display: flex;
         flex-direction: column;
@@ -92,6 +100,12 @@
             border-width: 2px 2px 4px 2px;
             border-radius: 0.6875rem;
         }
+    }
+
+    #dark &__clear-btn{
+        background-color: #262626;
+        border-color: #363636;
+        color: #a4a4a4;
     }
 
     @media screen and (max-width: 80.625rem) {
