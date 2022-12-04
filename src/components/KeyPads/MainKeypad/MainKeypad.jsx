@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CalculatorContext } from '../../../context/calculatorContext'
+import { CalculatorContext } from '../../../context/CalculatorContext'
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ModalKeypad from '../../ModalKeypad/ModalKeypad'

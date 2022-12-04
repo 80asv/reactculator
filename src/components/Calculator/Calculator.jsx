@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CalculatorContext } from '../../context/calculatorContext'
+import { CalculatorContext } from '../../context/CalculatorContext';
 import SecondKeyPad from '../KeyPads/SecondKeyPad/SecondKeyPad'
 import SecondPanel from '../Panel/SecondPanel/SecondPanel'
 import MainKeypad from '../KeyPads/MainKeypad/MainKeypad'

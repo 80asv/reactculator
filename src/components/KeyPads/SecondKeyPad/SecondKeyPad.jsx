@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CalculatorContext } from '../../../context/calculatorContext'
+import { CalculatorContext } from '../../../context/CalculatorContext'
 import Button from '../../Button/Button'
 import './SecondKeyPad.scss'
 

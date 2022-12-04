@@ -1,4 +1,4 @@
-import CalulatorContextProvider from "./context/calculatorContext"
+import CalulatorContextProvider from "./context/CalculatorContext"
 import Calculator from "./components/Calculator/Calculator"
 import { createContext, useState } from "react"
 import Header from "./components/Header/Header"
