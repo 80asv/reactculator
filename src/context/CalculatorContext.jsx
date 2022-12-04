@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { evaluate } from 'mathjs'
+import { evaluate } from 'mathjs';
 
 export const CalculatorContext = createContext();
 
